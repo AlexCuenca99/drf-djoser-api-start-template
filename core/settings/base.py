@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Environment variables
 env = environ.Env()
 env.prefix = "DJANGO_"
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(BASE_DIR, "..", ".env"))
 
 
 SECRET_KEY = env("SECRET_KEY")
