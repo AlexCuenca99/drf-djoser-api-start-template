@@ -11,7 +11,7 @@ if env("DEV_STAGE") == "initial":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "..", "db.sqlite3"),
         }
     }
 elif env("DEV_STAGE") == "test":
