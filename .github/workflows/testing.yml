@@ -24,8 +24,6 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
             - name: Run tests
-              run: |
-                  python manage.py test
               env:
                   DJANGO_DEBUG: ${{ secrets.DJANGO_DEBUG }}
                   DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
@@ -39,3 +37,6 @@ jobs:
                   DJANGO_EMAIL_HOST_PASSWORD: ${{ secrets.DJANGO_EMAIL_HOST_PASSWORD }}
 
                   DJANGO_DEV_STAGE: ${{ secrets.DJANGO_DEV_STAGE }}
+              run: |
+                  echo $DJANGO_SECRET_KEY
+                  python manage.py test
