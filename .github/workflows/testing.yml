@@ -26,3 +26,16 @@ jobs:
             - name: Run tests
               run: |
                   python manage.py test
+              env:
+                  DJANGO_DEBUG: ${{ secrets.DJANGO_DEBUG }}
+                  DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+
+                  DJANGO_EMAIL_BACKEND: ${{ secrets.DJANGO_EMAIL_BACKEND }}
+                  DJANGO_EMAIL_HOST: ${{ secrets.DJANGO_EMAIL_HOST }}
+                  DJANGO_EMAIL_PORT: ${{ secrets.DJANGO_EMAIL_PORT }}
+                  DJANGO_EMAIL_USE_TLS: ${{ secrets.DJANGO_EMAIL_USE_TLS }}
+
+                  DJANGO_EMAIL_HOST_USER: ${{ secrets.DJANGO_EMAIL_HOST_USER }}
+                  DJANGO_EMAIL_HOST_PASSWORD: ${{ secrets.DJANGO_EMAIL_HOST_PASSWORD }}
+
+                  DJANGO_DEV_STAGE: ${{ secrets.DJANGO_DEV_STAGE }}
