@@ -30,6 +30,7 @@ THIRD_PARTY_APPS = (
     "rest_framework",
     "rest_framework.authtoken",
     "rest_framework_simplejwt",
+    "djoser",
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -102,4 +103,36 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 15,
+}
+
+# Djoser
+
+# Custom serializers
+USER_CREATE_PASSWORD_RETYPE_SERIALIZER = (
+    "applications.accounts.serializers.UserCreatePasswordRetypeCustomSerializer"
+)
+USER_SERIALIZER = "applications.accounts.serializers.UserCustomSerializer"
+
+# Settings
+DJOSER = {
+    "LOGIN_FIELD": "email",
+    "USER_CREATE_PASSWORD_RETYPE": True,
+    "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
+    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
+    "SEND_CONFIRMATION_EMAIL": True,
+    "SET_USERNAME_RETYPE": True,
+    "SET_PASSWORD_RETYPE": True,
+    "USERNAME_RESET_CONFIRM_URL": "password/reset/confirm/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "email/reset/confirm/{uid}/{token}",
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    "SEND_ACTIVATION_EMAIL": True,
+    "SOCIAL_AUTH_ALLOWED_REDIRECT_URIS": [
+        "http://localhost:3000/google",
+        "http://localhost:3000/facebook",
+    ],
+    "SERIALIZERS": {
+        "user_create_password_retype": USER_CREATE_PASSWORD_RETYPE_SERIALIZER,
+        "user": USER_SERIALIZER,
+        "current_user": USER_SERIALIZER,
+    },
 }
