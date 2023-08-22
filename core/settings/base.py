@@ -31,6 +31,7 @@ THIRD_PARTY_APPS = (
     "rest_framework.authtoken",
     "rest_framework_simplejwt",
     "djoser",
+    "drf_yasg",
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
