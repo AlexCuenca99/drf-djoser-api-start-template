@@ -1,11 +1,8 @@
 USER_TEST_EMAIL_ADDRESS = "alex@alex.com"
 
-from contextlib import AbstractContextManager
-from typing import Any
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.test.utils import override_settings
-import json
 
 from rest_framework import status
 from rest_framework.test import APITestCase
