@@ -114,4 +114,4 @@ class LoginUserDjoserTest(APITestCase):
         response = self.client.post(
             self.jwt_create_url, self.user_login_info, format="json"
         )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
