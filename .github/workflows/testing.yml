@@ -38,5 +38,5 @@ jobs:
 
                   DJANGO_DEV_STAGE: ${{ secrets.DJANGO_DEV_STAGE }}
               run: |
-                  echo $"DJANGO_EMAIL_BACKEND"
+                  echo "$GITHUB_CONTEXT"
                   python manage.py test
