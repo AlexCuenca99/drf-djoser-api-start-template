@@ -109,9 +109,9 @@ REST_FRAMEWORK = {
 
 # Custom serializers
 USER_CREATE_PASSWORD_RETYPE_SERIALIZER = (
-    "applications.accounts.serializers.UserCreatePasswordRetypeCustomSerializer"
+    "applications.users.serializers.UserCreatePasswordRetypeCustomSerializer"
 )
-USER_SERIALIZER = "applications.accounts.serializers.UserCustomSerializer"
+USER_SERIALIZER = "applications.users.serializers.UserCustomSerializer"
 
 # Settings
 DJOSER = {
