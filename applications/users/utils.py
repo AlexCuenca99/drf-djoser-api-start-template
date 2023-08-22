@@ -5,7 +5,8 @@ from django.conf import settings
 
 def set_age(birth: datetime) -> int:
     current_date = datetime.now()
-    birth_date = birth.strptime(str(birth), "%Y-%m-%d")
+    birth_date = datetime.strptime(str(birth), "%Y-%m-%d")
+
     age = current_date.year - birth_date.year
 
     # Verify if not have yet completed year
