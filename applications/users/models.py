@@ -21,6 +21,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
     gender = models.CharField(
         "Gender", max_length=3, choices=GENDER_CHOICES, default=NONE
     )
+    age = models.PositiveSmallIntegerField("Age")
     birth = models.DateField("Birth", auto_now=False, auto_now_add=False)
     photo = models.ImageField(
         "Profile photo",
