@@ -22,4 +22,4 @@ def set_age(birth: datetime) -> int:
 def set_image_path(instance, filename):
     ext = filename.split(".")[-1]
     filename = "photo_{}.{}".format(instance.id, ext)
-    return os.path.join("users", instance.id, "images", "profile", filename)
+    return os.path.join("users", str(instance.id), "images", "profile", filename)
