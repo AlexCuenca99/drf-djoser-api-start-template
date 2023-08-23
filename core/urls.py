@@ -36,7 +36,7 @@ urlpatterns = [
     ),
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     # Djoser
-    path("api/v1/auth/", include("djoser.urls")),
-    path("api/v1/auth/", include("djoser.urls.jwt")),
-    path("api/v1/auth/", include("djoser.social.urls")),
+    path("api/v1/", include("djoser.urls")),
+    path("api/v1/", include("djoser.urls.jwt")),
+    path("api/v1/", include("djoser.social.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
